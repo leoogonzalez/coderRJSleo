@@ -1,13 +1,13 @@
-import React from 'react'
-import ItemListContainer from './components/ItemListContainer'
+// import React from 'react'
+// import ItemListContainer from './components/ItemListContainer'
 
-const Main = () => {
-  return (
-    <main>
-           <ItemListContainer titulo="Hola Mundo"></ItemListContainer>
+// const Main = () => {
+//   return (
+//     <main>
+//            <ItemListContainer titulo="Hola Mundo"></ItemListContainer>
            
-    </main>
-  )
-}
+//     </main>
+//   )
+// }
 
-export default Main
+// export default Main
