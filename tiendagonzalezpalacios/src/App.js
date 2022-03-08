@@ -9,7 +9,7 @@ return <div id="root">
     <NavBar>
 
        </NavBar>
-      <ItemListContainer titulo="Bienvenido">
+      <ItemListContainer>
 
       </ItemListContainer>
 
