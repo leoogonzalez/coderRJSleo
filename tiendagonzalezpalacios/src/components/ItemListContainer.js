@@ -1,6 +1,7 @@
 import React from 'react'
 // import ItemCount from './ItemCount'
 import { useState,useEffect } from 'react'
+import ItemList from "./ItemList"
 
 let productosIniciales = [
 {
@@ -44,7 +45,7 @@ pedido
   console.log("estuvo mal ")
 })
 
-// setProductos(productosIniciales)
+
 
  },[])
 
@@ -52,13 +53,9 @@ pedido
   return (
     <main>
        <h3 className ='contenido__main'></h3>
-      <button onClick={() => setloading(!loading)}>toggle</button>
-      <ul>
-           {productos.map((producto)=>{
-             return <li key={producto.id}>{producto.nombre}</li> 
-           }
-           )}
-      </ul>
+      <button className='carrito' onClick={() => setloading(!loading)}>productos</button>
+  
+      <ItemList productosIniciales={productos}></ItemList>
       {/* <ItemCount stock={10} initial={10}></ItemCount> */}
       </main>
   );

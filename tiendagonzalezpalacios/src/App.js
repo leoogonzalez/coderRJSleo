@@ -6,14 +6,8 @@ const App = () => {
   
  
 return <div id="root">
-    <NavBar>
-
-       </NavBar>
-      <ItemListContainer>
-
-      </ItemListContainer>
-
-    
+    <NavBar></NavBar>
+      <ItemListContainer></ItemListContainer>
     <Footer></Footer>
 </div>
 } 
