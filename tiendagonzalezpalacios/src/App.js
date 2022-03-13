@@ -6,9 +6,13 @@ const App = () => {
   
  
 return <div id="root">
-    <NavBar></NavBar>
-      <ItemListContainer></ItemListContainer>
-    <Footer></Footer>
+    <NavBar/>
+    
+    <ItemListContainer/>
+
+    <Footer/>
+
+  
 </div>
 } 
 

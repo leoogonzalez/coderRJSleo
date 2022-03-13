@@ -10,7 +10,7 @@ html , body , #root  {
 
 #layout-header a{
     text-decoration: none;
-    color: #594432;
+    color: #F2E2CE;
     margin-left: 1rem;
 }
 
@@ -24,18 +24,20 @@ html , body , #root  {
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 1rem;
-    background-color: #EAD3CB;
+    background-color: #031626;
     box-shadow: 0 2px 4px rgba(0, 0,0, 0); 
 }
 
 main{
 flex-grow: 1;
 padding: 1rem;
+background-color: #D9BBA0;
 }
 
 footer{
     padding: 0.5rem;
-    background-color: #EAD3CB;
+    background-color: #031626;
+    color: #F2E2CE;
     text-align: center;
     font-size: 0.8rem;
 
@@ -47,12 +49,31 @@ nav{
 }
 
 .header__title{
-    color: #594432;
+    color: #F2E2CE;
 }
-
+.material-icons{
+    color:#F2E2CE;
+}
 .contenido__main{
     color: #594432;
     justify-content: center;
 
 }
+.productos{
+display : flex;
+
+}
+#tarjeta{
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #F2E2CE;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+
+
 

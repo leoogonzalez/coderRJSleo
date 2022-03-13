@@ -1,22 +1,23 @@
 import React from 'react'
 // import ItemCount from './ItemCount'
 import { useState,useEffect } from 'react'
-import ItemList from "./ItemList"
+import ItemList from "./ItemList";
+import ItemDetailContainer from "./ItemDetailContainer"
 
 let productosIniciales = [
 {
   id : 1,
-  nombre : "producto 1",
+  nombre: "Producto 1",
  precio:100
 },
 {
   id : 2,
-  nombre : "producto 2",
+  nombre: "Producto 2",
  precio:200
 },
 {
   id : 3,
-  nombre : "producto 3",
+  nombre: "Producto 3",
  precio:300
 }
 
@@ -24,7 +25,7 @@ let productosIniciales = [
 
 const ItemListContainer = ()  => {
 
-  const [loading,setloading] = useState(true)
+  const [loading,setLoading] = useState(true)
   const [productos,setProductos] = useState([])
 
   useEffect(()=>{
@@ -51,12 +52,12 @@ pedido
 
 
   return (
-    <main>
-       <h3 className ='contenido__main'></h3>
-      <button className='carrito' onClick={() => setloading(!loading)}>productos</button>
-  
-      <ItemList productosIniciales={productos}></ItemList>
+    <main as="main">
+       <h1 className ='contenido__main'>Bienvenido</h1>
+      {/* <button className='carrito' onClick={() => setloading(!loading)}>toggle</button> */}
+      <ItemList productos={productos}/>
       {/* <ItemCount stock={10} initial={10}></ItemCount> */}
+   <ItemDetailContainer/>
       </main>
   );
 }
