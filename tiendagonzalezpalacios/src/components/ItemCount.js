@@ -5,7 +5,7 @@
 
 const ItemCount = () => {
 
-     const initial = 5
+     const initial = 1
      const stock = 10 
       
        const [estado, setEstado] = useState(initial)
@@ -27,16 +27,19 @@ const ItemCount = () => {
    }
   
    const AgregarAlCarrito = () => {
-     setEstado(0)
+     setEstado(initial)
    }
 
 
   return (        
-       <div>    
-              <h5>Tu contador va : {estado}</h5>
-         <button  onClick = {Incrementar}>Sumar</button>
-     <button  onClick = {AgregarAlCarrito}>Agregar al carrito</button>
-     <button  onClick = {Decrementar}>Restar</button></div>
+       <div className='contador'>    
+              <h5>productos {estado}</h5>
+         <button type="button" className="btn btn-primary" onClick = {Incrementar}>Sumar</button>
+     <button type="button" className="btn btn-primary" onClick = {Decrementar}>Restar</button>
+     <button type="button" className="btn btn-primary" onClick = {AgregarAlCarrito}>Agregar al carrito</button>
+     
+     
+     </div>
 
  )
  

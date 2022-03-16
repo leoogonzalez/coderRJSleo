@@ -10,7 +10,7 @@ html , body , #root  {
 
 #layout-header a{
     text-decoration: none;
-    color: #F2E2CE;
+    color: #F2F2F2;
     margin-left: 1rem;
 }
 
@@ -24,22 +24,23 @@ html , body , #root  {
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 1rem;
-    background-color: #031626;
+    background-color: #437399;
     box-shadow: 0 2px 4px rgba(0, 0,0, 0); 
 }
 
 main{
 flex-grow: 1;
 padding: 1rem;
-background-color: #D9BBA0;
+background-color:#F2F2F2;
 }
 
 footer{
     padding: 0.5rem;
-    background-color: #031626;
-    color: #F2E2CE;
+    background-color: #437399;
+    color: #F2F2F2;
     text-align: center;
     font-size: 0.8rem;
+    font-family: 'Fjalla One', sans-serif;
 
 }
 
@@ -49,19 +50,38 @@ nav{
 }
 
 .header__title{
-    color: #F2E2CE;
+    color: #F2F2F2;
 }
 .material-icons{
-    color:#F2E2CE;
+    color:#F2F2F2;
 }
 .contenido__main{
-    color: #594432;
-    justify-content: center;
+    color:#437399;
+font-family: 'Fjalla One', sans-serif;
 
+}
+.header__title{
+    font-family: 'Fjalla One', sans-serif;
+}
+.nav__link{
+    font-family: 'Fjalla One', sans-serif;
 }
 .productos{
 display : flex;
 
+}
+article{
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background-color: #437399;
+    color:#F2F2F2;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 #tarjeta{
     width: 200px;

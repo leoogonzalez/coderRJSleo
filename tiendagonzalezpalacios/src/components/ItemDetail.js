@@ -1,14 +1,14 @@
 import React from 'react'
-
+import ItemCount from './ItemCount'
 const ItemDetail = ({producto}) => {
   return (
     <div id="tarjeta">
   <article className='contenidoTarjeta'>
   <h3>{producto.nombre}</h3>
-  <div>{producto.img}</div>  
+  <img src="https://picsum.photos/160/100"/>
   <p>precio: $ {producto.precio}</p>
   <p>{producto.descripcion}</p>
-  <button type="button" className="btn btn-primary">Botón</button>
+  <ItemCount/>
   </article>
     </div>
   )

@@ -6,7 +6,6 @@ let productosPrincipales =[{
     id: 1,
     nombre: "Violin 4/4 Guarnerius",
 precio: 100.000,
-// img:"https://palomavaleva.com/site/wp-content/uploads/2018/07/Violons-03.jpg",
 descripcion:"Violin 4/4 hecho con madera de Ebano traido de Italia",
 }
 ]

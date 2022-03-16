@@ -1,8 +1,13 @@
-import React from 'react'
 // import ItemCount from './ItemCount'
-import { useState,useEffect } from 'react'
-import ItemList from "./ItemList";
-import ItemDetailContainer from "./ItemDetailContainer"
+import ItemList from "./ItemList"
+import { useState,useEffect} from 'react'
+import{useParams} from "react-router-dom"
+
+
+
+// import ItemDetailContainer from "./ItemDetailContainer"
+
+
 
 let productosIniciales = [
 {
@@ -27,38 +32,43 @@ const ItemListContainer = ()  => {
 
   const [loading,setLoading] = useState(true)
   const [productos,setProductos] = useState([])
+  const {idCategoria} = useParams()
+  
 
-  useEffect(()=>{
-console.log("Ejecutando userEffect")
+  useEffect(()=>{  
 
 const pedido = new Promise((res,rej)=>{
+  
   setTimeout(()=>{
+    console.log(idCategoria)
 res(productosIniciales)
+
   },2000)
 }) 
 
 pedido
 .then((resultado)=>{
-  console.log("estuvo bien")
+console.log("todo bien")
   setProductos(resultado)
 })
 .catch((error)=>{
-  console.log("estuvo mal ")
+  console.log("error al cargar los productos")
+
 })
 
 
 
- },[])
+ },[idCategoria])
 
 
   return (
-    <main as="main">
+    <fragment >
        <h1 className ='contenido__main'>Bienvenido</h1>
-      {/* <button className='carrito' onClick={() => setloading(!loading)}>toggle</button> */}
-      <ItemList productos={productos}/>
-      {/* <ItemCount stock={10} initial={10}></ItemCount> */}
-   <ItemDetailContainer/>
-      </main>
+      <ItemList productos={productos}/> 
+   
+      
+      
+      </fragment>
   );
 }
 
