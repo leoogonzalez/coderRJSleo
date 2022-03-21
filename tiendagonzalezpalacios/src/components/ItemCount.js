@@ -3,11 +3,9 @@
  import { useState } from 'react'
 
 
-const ItemCount = () => {
+const ItemCount = ({initial, stock, onAdd}) => {
 
-     const initial = 1
-     const stock = 10 
-      
+  
        const [estado, setEstado] = useState(initial)
   
    const Incrementar = () => {
@@ -27,7 +25,8 @@ const ItemCount = () => {
    }
   
    const AgregarAlCarrito = () => {
-     setEstado(initial)
+      setEstado(initial)
+    onAdd()
    }
 
 

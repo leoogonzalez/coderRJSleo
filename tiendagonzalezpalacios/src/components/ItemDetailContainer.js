@@ -1,58 +1,38 @@
 import React from 'react'
-import ItemDetail from './ItemDetail'
 import {useState, useEffect} from 'react'
-
-let productosPrincipales =[{
-    id: 1,
-    nombre: "Violin 4/4 Guarnerius",
-precio: 100.000,
-descripcion:"Violin 4/4 hecho con madera de Ebano traido de Italia",
-}
-]
+import { useParams } from 'react-router-dom'
+import ItemDetail from './ItemDetail'
+import { toast } from 'react-toastify'
  
 
 
 
 const ItemDetailContainer = () => {
-    const [loading,setLoading] = useState(true)
-    const [productos,setProductos] = useState([])
+  const [item, setItem] = useState({});
+  const [loading, setLoading] = useState(true);
+  const { idProducto } = useParams();
 
-    useEffect(()=>{
-        const pedido = new Promise ((res,rej)=>{
-            setTimeout(()=>{
-                res(productosPrincipales)
-            },2000)
-        })
-        pedido 
-        .then((resultado)=>{
-            console.log("todo salio bien")
-            setProductos(resultado)
-        })
-        .catch((error)=>{
-console.log("hubo un error")
-        })
+  useEffect(() => {
+    fetch(`https://fakestoreapi.com/products/${idProducto}`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((respuesta) => {
+        setItem(respuesta);
+      })
+      .catch(() => {
+        // toast.error("error al cargar el producto")
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  });
 
-    },[])
+  if (loading) {
+    return <h1>Cargando...</h1>;
+  } else {
+    return <ItemDetail item={item} />;
+  }
+};
 
-
-
-
-
-
-  return (
-    <div>
-        <h3>Detalles del producto</h3>
-        <ul>
-           {productos.map((producto)=>{
-             return <ItemDetail key={producto.id} producto={producto}/>
-           }
-           )}
-      </ul>
-
-
-
-    </div>
-  )
-}
-
-export default ItemDetailContainer
+export default ItemDetailContainer;

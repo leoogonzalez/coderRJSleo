@@ -2,31 +2,8 @@
 import ItemList from "./ItemList"
 import { useState,useEffect} from 'react'
 import{useParams} from "react-router-dom"
-
-
-
 // import ItemDetailContainer from "./ItemDetailContainer"
 
-
-
-let productosIniciales = [
-{
-  id : 1,
-  nombre: "Producto 1",
- precio:100
-},
-{
-  id : 2,
-  nombre: "Producto 2",
- precio:200
-},
-{
-  id : 3,
-  nombre: "Producto 3",
- precio:300
-}
-
-];
 
 const ItemListContainer = ()  => {
 
@@ -37,24 +14,39 @@ const ItemListContainer = ()  => {
 
   useEffect(()=>{  
 
-const pedido = new Promise((res,rej)=>{
+    fetch('/productosPublic.json')
+    .then((response)=>{
+      return response.json()
+    })
+    .then((resultado)=>{
+      console.table(resultado)
+      setProductos(resultado)
+    })
+    .catch(()=>{
+console.log("error al cargar los productos")
+    })
+  .finally(()=>{
+setLoading(false)
+  })
+
+// const pedido = new Promise((res,rej)=>{
   
-  setTimeout(()=>{
-    console.log(idCategoria)
-res(productosIniciales)
+//   setTimeout(()=>{
+//     console.log(idCategoria)
+// res(productosIniciales)
 
-  },2000)
-}) 
+//   },2000)
+// }) 
 
-pedido
-.then((resultado)=>{
-console.log("todo bien")
-  setProductos(resultado)
-})
-.catch((error)=>{
-  console.log("error al cargar los productos")
+// pedido
+// .then((resultado)=>{
+// console.log("todo bien")
+//   setProductos(resultado)
+// })
+// .catch((error)=>{
+//   console.log("error al cargar los productos")
 
-})
+// })
 
 
 

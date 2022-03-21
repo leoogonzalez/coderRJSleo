@@ -6,9 +6,9 @@ const Item = ({producto}) => {
 
   return (
     <article>
-  <h3>{producto.nombre}</h3>
-  <img src="https://picsum.photos/160/100"/>
-  <p>precio : $ {producto.precio}</p>   
+  <h2>{producto.title}</h2>
+  <img src={producto.image}/>
+  <p>precio : $ {producto.price}</p>   
   <Link to={`/producto/${producto.id}`}>Ver detalle</Link>
   </article>
   )
