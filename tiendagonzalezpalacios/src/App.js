@@ -1,27 +1,22 @@
 import NavBar from './components/NavBar';
 import Main from  "./Main"
 import Footer from "./Footer"
-import {BrowserRouter} from "react-router-dom"
-
-
-
-
+import {BrowserRouter} from "react-router-dom";
+import MiProvider from './contexto/CartContext';
 
 const App = () => {
   
-return(
-
+return (
+  <MiProvider>
     <BrowserRouter>
-
-    <div id="root">
-         <NavBar/>
-        <Main/>
-         <Footer/>
-    </div> 
-
- </BrowserRouter>
-
-) 
+      <div id="root">
+        <NavBar />
+        <Main />
+        <Footer />
+      </div>
+    </BrowserRouter>
+  </MiProvider>
+)
 
 } 
 
